@@ -2,9 +2,9 @@
 
 namespace FluxMarkdownToHtmlConverterApi\Channel\Converter\Command;
 
-use FluxMarkdownToHtmlConverterApi\Adapter\Api\HtmlDto;
-use FluxMarkdownToHtmlConverterApi\Adapter\Api\MarkdownDto;
-use FluxMarkdownToHtmlConverterApi\Adapter\Config\ColorConfigDto;
+use FluxMarkdownToHtmlConverterApi\Adapter\Color\ColorConfigDto;
+use FluxMarkdownToHtmlConverterApi\Adapter\Html\HtmlDto;
+use FluxMarkdownToHtmlConverterApi\Adapter\Markdown\MarkdownDto;
 use FluxMarkdownToHtmlConverterApi\Channel\Converter\Converter\CustomConverter;
 
 class ConvertCommand

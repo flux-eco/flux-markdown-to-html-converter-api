@@ -2,7 +2,7 @@
 
 namespace FluxMarkdownToHtmlConverterApi\Channel\Converter\Converter;
 
-use FluxMarkdownToHtmlConverterApi\Adapter\Config\ColorConfigDto;
+use FluxMarkdownToHtmlConverterApi\Adapter\Color\ColorConfigDto;
 use FluxMarkdownToHtmlConverterApi\Channel\Converter\Converter\Color\ColorExtension;
 use League\CommonMark\Environment\EnvironmentBuilderInterface;
 use League\CommonMark\Extension\ExtensionInterface;

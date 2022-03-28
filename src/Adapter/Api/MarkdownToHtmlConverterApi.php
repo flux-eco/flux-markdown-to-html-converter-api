@@ -2,6 +2,8 @@
 
 namespace FluxMarkdownToHtmlConverterApi\Adapter\Api;
 
+use FluxMarkdownToHtmlConverterApi\Adapter\Html\HtmlDto;
+use FluxMarkdownToHtmlConverterApi\Adapter\Markdown\MarkdownDto;
 use FluxMarkdownToHtmlConverterApi\Channel\Converter\Port\ConverterService;
 
 class MarkdownToHtmlConverterApi

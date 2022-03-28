@@ -1,6 +1,6 @@
 <?php
 
-namespace FluxMarkdownToHtmlConverterApi\Adapter\Config;
+namespace FluxMarkdownToHtmlConverterApi\Adapter\Color;
 
 class ColorConfigDto
 {
