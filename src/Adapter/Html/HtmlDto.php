@@ -1,6 +1,6 @@
 <?php
 
-namespace FluxMarkdownToHtmlConverterApi\Adapter\Api;
+namespace FluxMarkdownToHtmlConverterApi\Adapter\Html;
 
 class HtmlDto
 {

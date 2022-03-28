@@ -2,7 +2,7 @@
 
 namespace FluxMarkdownToHtmlConverterApi\Adapter\Api;
 
-use FluxMarkdownToHtmlConverterApi\Adapter\Config\ColorConfigDto;
+use FluxMarkdownToHtmlConverterApi\Adapter\Color\ColorConfigDto;
 
 class MarkdownToHtmlConverterApiConfigDto
 {

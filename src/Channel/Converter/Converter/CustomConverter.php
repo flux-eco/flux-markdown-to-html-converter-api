@@ -2,7 +2,7 @@
 
 namespace FluxMarkdownToHtmlConverterApi\Channel\Converter\Converter;
 
-use FluxMarkdownToHtmlConverterApi\Adapter\Config\ColorConfigDto;
+use FluxMarkdownToHtmlConverterApi\Adapter\Color\ColorConfigDto;
 use League\CommonMark\Environment\Environment;
 use League\CommonMark\Extension\CommonMark\CommonMarkCoreExtension;
 use League\CommonMark\Extension\GithubFlavoredMarkdownExtension;
