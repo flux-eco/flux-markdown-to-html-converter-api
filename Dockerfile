@@ -19,7 +19,7 @@ COPY . /flux-markdown-to-html-converter-api
 
 FROM scratch
 
-LABEL org.opencontainers.image.source="https://github.com/fluxapps/flux-markdown-to-html-converter-api"
+LABEL org.opencontainers.image.source="https://github.com/flux-eco/flux-markdown-to-html-converter-api"
 LABEL maintainer="fluxlabs <support@fluxlabs.ch> (https://fluxlabs.ch)"
 
 COPY --from=build /flux-markdown-to-html-converter-api /flux-markdown-to-html-converter-api
