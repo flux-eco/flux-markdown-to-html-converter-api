@@ -34,7 +34,12 @@ class MarkdownToHtmlConverterApi
     }
 
 
-    public function convertMultiple(object $markdowns) : object
+    /**
+     * @param MarkdownDto[] $markdowns
+     *
+     * @return HtmlDto[]
+     */
+    public function convertMultiple(array $markdowns) : array
     {
         return $this->getConverterService()
             ->convertMultiple(

@@ -37,7 +37,12 @@ class ConvertCommand
     }
 
 
-    public function convertMultiple(object $markdowns) : object
+    /**
+     * @param MarkdownDto[] $markdowns
+     *
+     * @return HtmlDto[]
+     */
+    public function convertMultiple(array $markdowns) : array
     {
         $htmls = [];
 
@@ -47,6 +52,6 @@ class ConvertCommand
             );
         }
 
-        return (object) $htmls;
+        return $htmls;
     }
 }
