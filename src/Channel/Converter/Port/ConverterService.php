@@ -37,7 +37,12 @@ class ConverterService
     }
 
 
-    public function convertMultiple(object $markdowns) : object
+    /**
+     * @param MarkdownDto[] $markdowns
+     *
+     * @return HtmlDto[]
+     */
+    public function convertMultiple(array $markdowns) : array
     {
         return ConvertCommand::new(
             $this->color_config
