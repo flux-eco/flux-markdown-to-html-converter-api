@@ -36,4 +36,4 @@ Minimal variables required to set are **bold**
 
 ## Example
 
-Look at [flux-markdown-to-html-converter-rest-api](https://github.com/flux-eco/flux-markdown-to-html-converter-rest-api)
+Look at [flux-markdown-to-html-converter-rest-api](https://github.com/flux-caps/flux-markdown-to-html-converter-rest-api)
