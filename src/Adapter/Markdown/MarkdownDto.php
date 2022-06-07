@@ -21,11 +21,11 @@ class MarkdownDto
     }
 
 
-    public static function newFromData(
-        object $data
+    public static function newFromObject(
+        object $markdown
     ) : static {
         return static::new(
-            $data->markdown
+            $markdown->markdown
         );
     }
 }
