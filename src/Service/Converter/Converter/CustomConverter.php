@@ -1,6 +1,6 @@
 <?php
 
-namespace FluxMarkdownToHtmlConverterApi\Channel\Converter\Converter;
+namespace FluxMarkdownToHtmlConverterApi\Service\Converter\Converter;
 
 use FluxMarkdownToHtmlConverterApi\Adapter\Color\ColorConfigDto;
 use League\CommonMark\Environment\Environment;

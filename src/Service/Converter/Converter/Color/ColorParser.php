@@ -1,6 +1,6 @@
 <?php
 
-namespace FluxMarkdownToHtmlConverterApi\Channel\Converter\Converter\Color;
+namespace FluxMarkdownToHtmlConverterApi\Service\Converter\Converter\Color;
 
 use League\CommonMark\Node\Inline\Text;
 use League\CommonMark\Parser\Inline\InlineParserInterface;

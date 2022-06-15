@@ -1,11 +1,11 @@
 <?php
 
-namespace FluxMarkdownToHtmlConverterApi\Channel\Converter\Command;
+namespace FluxMarkdownToHtmlConverterApi\Service\Converter\Command;
 
 use FluxMarkdownToHtmlConverterApi\Adapter\Color\ColorConfigDto;
 use FluxMarkdownToHtmlConverterApi\Adapter\Html\HtmlDto;
 use FluxMarkdownToHtmlConverterApi\Adapter\Markdown\MarkdownDto;
-use FluxMarkdownToHtmlConverterApi\Channel\Converter\Converter\CustomConverter;
+use FluxMarkdownToHtmlConverterApi\Service\Converter\Converter\CustomConverter;
 
 class ConvertCommand
 {
