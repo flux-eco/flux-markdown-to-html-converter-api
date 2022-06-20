@@ -4,7 +4,6 @@ namespace FluxMarkdownToHtmlConverterApi;
 
 require_once __DIR__ . "/../libs/flux-autoload-api/autoload.php";
 
-use FluxMarkdownToHtmlConverterApi\Libs\FluxAutoloadApi\Adapter\Autoload\ComposerAutoload;
 use FluxMarkdownToHtmlConverterApi\Libs\FluxAutoloadApi\Adapter\Autoload\Psr4Autoload;
 use FluxMarkdownToHtmlConverterApi\Libs\FluxAutoloadApi\Adapter\Checker\PhpVersionChecker;
 
@@ -22,7 +21,4 @@ Psr4Autoload::new(
 )
     ->autoload();
 
-ComposerAutoload::new(
-    __DIR__ . "/../libs/commonmark"
-)
-    ->autoload();
+require_once __DIR__ . "/../libs/commonmark/vendor/autoload.php";

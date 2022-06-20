@@ -3,6 +3,10 @@ ARG FLUX_NAMESPACE_CHANGER_IMAGE=docker-registry.fluxpublisher.ch/flux-namespace
 
 FROM $FLUX_AUTOLOAD_API_IMAGE:latest AS flux_autoload_api
 
+FROM composer:latest AS composer
+
+RUN (mkdir -p /code/commonmark && cd /code/commonmark && composer require league/commonmark --ignore-platform-reqs)
+
 FROM $FLUX_NAMESPACE_CHANGER_IMAGE:latest AS build_namespaces
 
 COPY --from=flux_autoload_api /flux-autoload-api /code/flux-autoload-api
@@ -11,7 +15,7 @@ RUN change-namespace /code/flux-autoload-api FluxAutoloadApi FluxMarkdownToHtmlC
 FROM composer:latest AS build
 
 COPY --from=build_namespaces /code/flux-autoload-api /flux-markdown-to-html-converter-api/libs/flux-autoload-api
-RUN (mkdir -p /flux-markdown-to-html-converter-api/libs/commonmark && cd /flux-markdown-to-html-converter-api/libs/commonmark && wget -O - https://github.com/thephpleague/commonmark/archive/main.tar.gz | tar -xz --strip-components=1 && composer install --no-dev)
+COPY --from=composer /code/commonmark /flux-markdown-to-html-converter-api/libs/commonmark
 COPY . /flux-markdown-to-html-converter-api
 
 FROM scratch
