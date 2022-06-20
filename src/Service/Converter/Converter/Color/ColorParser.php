@@ -24,7 +24,7 @@ class ColorParser implements InlineParserInterface
 
     public function getMatchDefinition() : InlineParserMatch
     {
-        return InlineParserMatch::regex("@color-([A-Za-z0-9_]+)\((.+)\)");
+        return InlineParserMatch::regex("@color-([A-Za-z\d_]+)\((.+)\)");
     }
 
 
