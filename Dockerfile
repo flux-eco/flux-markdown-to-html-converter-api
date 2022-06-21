@@ -14,16 +14,18 @@ RUN change-namespace /code/flux-autoload-api FluxAutoloadApi FluxMarkdownToHtmlC
 
 FROM composer:latest AS build
 
-COPY --from=build_namespaces /code/flux-autoload-api /flux-markdown-to-html-converter-api/libs/flux-autoload-api
-COPY --from=composer /code/commonmark /flux-markdown-to-html-converter-api/libs/commonmark
-COPY . /flux-markdown-to-html-converter-api
+COPY --from=build_namespaces /code/flux-autoload-api /build/flux-markdown-to-html-converter-api/libs/flux-autoload-api
+COPY --from=composer /code/commonmark /build/flux-markdown-to-html-converter-api/libs/commonmark
+COPY . /build/flux-markdown-to-html-converter-api
+
+RUN (cd /build && tar -czf flux-markdown-to-html-converter-api.tar.gz flux-markdown-to-html-converter-api)
 
 FROM scratch
 
 LABEL org.opencontainers.image.source="https://github.com/flux-eco/flux-markdown-to-html-converter-api"
 LABEL maintainer="fluxlabs <support@fluxlabs.ch> (https://fluxlabs.ch)"
 
-COPY --from=build /flux-markdown-to-html-converter-api /flux-markdown-to-html-converter-api
+COPY --from=build /build /
 
 ARG COMMIT_SHA
 LABEL org.opencontainers.image.revision="$COMMIT_SHA"
