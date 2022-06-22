@@ -4,18 +4,60 @@ Markdown To Html Converter Api
 
 ## Installation
 
+## Installation
+
+Hint: Use `latest` as `%tag%` (or omit it) for get the latest build
+
+### Non-Composer
+
 ```dockerfile
-COPY --from=docker-registry.fluxpublisher.ch/flux-markdown-to-html-converter/api:latest /flux-markdown-to-html-converter-api /%path%/libs/flux-markdown-to-html-converter-api
+COPY --from=docker-registry.fluxpublisher.ch/flux-markdown-to-html-converter/api:%tag% /flux-markdown-to-html-converter-api /%path%/libs/flux-markdown-to-html-converter-api
 ```
 
-## Usage
+or
+
+```dockerfile
+RUN (mkdir -p /%path%/libs/flux-markdown-to-html-converter-api && cd /%path%/libs/flux-markdown-to-html-converter-api && wget -O - https://docker-registry.fluxpublisher.ch/api/get-build-archive/flux-markdown-to-html-converter/api.tar.gz?tag=%tag% | tar -xz --strip-components=1)
+```
+
+or
+
+Download https://docker-registry.fluxpublisher.ch/api/get-build-archive/flux-markdown-to-html-converter/api.tar.gz?tag=%tag% and extract it to `/%path%/libs/flux-markdown-to-html-converter-api`
+
+Hint: If you use `wget` without pipe use `--content-disposition` to get the correct file name
+
+#### Usage
 
 ```php
 require_once __DIR__ . "/%path%/libs/flux-markdown-to-html-converter-api/autoload.php";
 ```
 
-```php
-MarkdownToHtmlConverterApi::new();
+### Composer
+
+```json
+{
+    "repositories": [
+        {
+            "type": "package",
+            "package": {
+                "name": "flux/flux-markdown-to-html-converter-api",
+                "version": "%tag%",
+                "dist": {
+                    "url": "https://docker-registry.fluxpublisher.ch/api/get-build-archive/flux-markdown-to-html-converter/api.tar.gz?tag=%tag%",
+                    "type": "tar"
+                },
+                "autoload": {
+                    "files": [
+                        "autoload.php"
+                    ]
+                }
+            }
+        }
+    ],
+    "require": {
+        "flux/flux-markdown-to-html-converter-api": "*"
+    }
+}
 ```
 
 ## Custom Markdown
