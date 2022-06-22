@@ -1,11 +1,11 @@
 ARG FLUX_AUTOLOAD_API_IMAGE=docker-registry.fluxpublisher.ch/flux-autoload/api
 ARG FLUX_NAMESPACE_CHANGER_IMAGE=docker-registry.fluxpublisher.ch/flux-namespace-changer
 
-FROM $FLUX_AUTOLOAD_API_IMAGE:latest AS flux_autoload_api
+FROM $FLUX_AUTOLOAD_API_IMAGE:v2022-06-22-1 AS flux_autoload_api
 
 FROM composer:latest AS composer
 
-RUN (mkdir -p /code/commonmark && cd /code/commonmark && composer require league/commonmark --ignore-platform-reqs)
+RUN (mkdir -p /code/commonmark && cd /code/commonmark && composer require league/commonmark:2.3.3 --ignore-platform-reqs)
 
 FROM $FLUX_NAMESPACE_CHANGER_IMAGE:latest AS build_namespaces
 
@@ -24,6 +24,7 @@ FROM scratch
 
 LABEL org.opencontainers.image.source="https://github.com/flux-eco/flux-markdown-to-html-converter-api"
 LABEL maintainer="fluxlabs <support@fluxlabs.ch> (https://fluxlabs.ch)"
+LABEL flux-docker-registry-rest-api-build-path="/flux-markdown-to-html-converter-api.tar.gz"
 
 COPY --from=build /build /
 
