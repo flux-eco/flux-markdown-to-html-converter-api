@@ -7,7 +7,7 @@ FROM composer:latest AS composer
 
 RUN (mkdir -p /code/commonmark && cd /code/commonmark && composer require league/commonmark:2.3.3 --ignore-platform-reqs)
 
-FROM $FLUX_NAMESPACE_CHANGER_IMAGE:latest AS build_namespaces
+FROM $FLUX_NAMESPACE_CHANGER_IMAGE:v2022-06-23-1 AS build_namespaces
 
 COPY --from=flux_autoload_api /flux-autoload-api /code/flux-autoload-api
 RUN change-namespace /code/flux-autoload-api FluxAutoloadApi FluxMarkdownToHtmlConverterApi\\Libs\\FluxAutoloadApi
