@@ -11,18 +11,18 @@ Hint: Use `latest` as `%tag%` (or omit it) for get the latest build
 ### Non-Composer
 
 ```dockerfile
-COPY --from=docker-registry.fluxpublisher.ch/flux-markdown-to-html-converter/api:%tag% /flux-markdown-to-html-converter-api /%path%/libs/flux-markdown-to-html-converter-api
+COPY --from=docker-registry.fluxpublisher.ch/flux-markdown-to-html-converter-api:%tag% /flux-markdown-to-html-converter-api /%path%/libs/flux-markdown-to-html-converter-api
 ```
 
 or
 
 ```dockerfile
-RUN (mkdir -p /%path%/libs/flux-markdown-to-html-converter-api && cd /%path%/libs/flux-markdown-to-html-converter-api && wget -O - https://docker-registry.fluxpublisher.ch/api/get-build-archive/flux-markdown-to-html-converter/api.tar.gz?tag=%tag% | tar -xz --strip-components=1)
+RUN (mkdir -p /%path%/libs/flux-markdown-to-html-converter-api && cd /%path%/libs/flux-markdown-to-html-converter-api && wget -O - https://docker-registry.fluxpublisher.ch/api/get-build-archive/flux-markdown-to-html-converter-api.tar.gz?tag=%tag% | tar -xz --strip-components=1)
 ```
 
 or
 
-Download https://docker-registry.fluxpublisher.ch/api/get-build-archive/flux-markdown-to-html-converter/api.tar.gz?tag=%tag% and extract it to `/%path%/libs/flux-markdown-to-html-converter-api`
+Download https://docker-registry.fluxpublisher.ch/api/get-build-archive/flux-markdown-to-html-converter-api.tar.gz?tag=%tag% and extract it to `/%path%/libs/flux-markdown-to-html-converter-api`
 
 Hint: If you use `wget` without pipe use `--content-disposition` to get the correct file name
 
@@ -43,7 +43,7 @@ require_once __DIR__ . "/%path%/libs/flux-markdown-to-html-converter-api/autoloa
                 "name": "flux/flux-markdown-to-html-converter-api",
                 "version": "%tag%",
                 "dist": {
-                    "url": "https://docker-registry.fluxpublisher.ch/api/get-build-archive/flux-markdown-to-html-converter/api.tar.gz?tag=%tag%",
+                    "url": "https://docker-registry.fluxpublisher.ch/api/get-build-archive/flux-markdown-to-html-converter-api.tar.gz?tag=%tag%",
                     "type": "tar"
                 },
                 "autoload": {
