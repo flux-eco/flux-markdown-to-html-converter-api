@@ -9,12 +9,6 @@ Markdown To Html Converter Api
 ### Non-Composer
 
 ```dockerfile
-COPY --from=docker-registry.fluxpublisher.ch/flux-markdown-to-html-converter-api:%tag% /flux-markdown-to-html-converter-api /%path%/libs/flux-markdown-to-html-converter-api
-```
-
-or
-
-```dockerfile
 RUN (mkdir -p /%path%/libs/flux-markdown-to-html-converter-api && cd /%path%/libs/flux-markdown-to-html-converter-api && wget -O - https://github.com/flux-eco/flux-markdown-to-html-converter-api/releases/download/%tag%/flux-markdown-to-html-converter-api-%tag%-build.tar.gz | tar -xz --strip-components=1)
 ```
 
