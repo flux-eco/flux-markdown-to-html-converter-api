@@ -6,7 +6,9 @@ Markdown To Html Converter Api
 
 ## Installation
 
-### Non-Composer
+### Native
+
+#### Download
 
 ```dockerfile
 RUN (mkdir -p /%path%/libs/flux-markdown-to-html-converter-api && cd /%path%/libs/flux-markdown-to-html-converter-api && wget -O - https://github.com/flux-eco/flux-markdown-to-html-converter-api/releases/download/%tag%/flux-markdown-to-html-converter-api-%tag%-build.tar.gz | tar -xz --strip-components=1)
@@ -16,7 +18,7 @@ or
 
 Download https://github.com/flux-eco/flux-markdown-to-html-converter-api/releases/download/%tag%/flux-markdown-to-html-converter-api-%tag%-build.tar.gz and extract it to `/%path%/libs/flux-markdown-to-html-converter-api`
 
-#### Usage
+#### Load
 
 ```php
 require_once __DIR__ . "/%path%/libs/flux-markdown-to-html-converter-api/autoload.php";
