@@ -34,7 +34,7 @@ class ColorRenderer implements NodeRendererInterface
 
         $attributes = [];
 
-        $color = $this->color_config->colors[$node->name] ?? null;
+        $color = $this->color_config->colors->{$node->name} ?? null;
         if (!empty($color)) {
             $attributes["style"] = "color:" . $color;
         }

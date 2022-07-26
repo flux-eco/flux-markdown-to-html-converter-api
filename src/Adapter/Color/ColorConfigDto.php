@@ -5,24 +5,18 @@ namespace FluxMarkdownToHtmlConverterApi\Adapter\Color;
 class ColorConfigDto
 {
 
-    /**
-     * @param string[] $colors
-     */
     private function __construct(
-        public readonly array $colors
+        public readonly object $colors
     ) {
 
     }
 
 
-    /**
-     * @param string[]|null $colors
-     */
     public static function new(
-        ?array $colors = null
+        ?object $colors = null
     ) : static {
         return new static(
-            $colors ?? []
+            $colors ?? (object) []
         );
     }
 
@@ -39,7 +33,7 @@ class ColorConfigDto
         }
 
         return static::new(
-            $colors
+            (object) $colors
         );
     }
 }
