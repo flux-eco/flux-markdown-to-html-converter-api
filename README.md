@@ -11,12 +11,12 @@ Markdown To Html Converter Api
 #### Download
 
 ```dockerfile
-RUN (mkdir -p /%path%/libs/flux-markdown-to-html-converter-api && cd /%path%/libs/flux-markdown-to-html-converter-api && wget -O - https://github.com/fluxfw/flux-markdown-to-html-converter-api/releases/download/%tag%/flux-markdown-to-html-converter-api-%tag%-build.tar.gz | tar -xz --strip-components=1)
+RUN (mkdir -p /%path%/libs/flux-markdown-to-html-converter-api && cd /%path%/libs/flux-markdown-to-html-converter-api && wget -O - https://github.com/fluxfw/flux-markdown-to-html-converter-api/archive/refs/tags/%tag%.tar.gz | tar -xz --strip-components=1)
 ```
 
 or
 
-Download https://github.com/fluxfw/flux-markdown-to-html-converter-api/releases/download/%tag%/flux-markdown-to-html-converter-api-%tag%-build.tar.gz and extract it to `/%path%/libs/flux-markdown-to-html-converter-api`
+Download https://github.com/fluxfw/flux-markdown-to-html-converter-api/archive/refs/tags/%tag%.tar.gz and extract it to `/%path%/libs/flux-markdown-to-html-converter-api`
 
 #### Load
 
@@ -35,7 +35,7 @@ require_once __DIR__ . "/%path%/libs/flux-markdown-to-html-converter-api/autoloa
                 "name": "flux/flux-markdown-to-html-converter-api",
                 "version": "%tag%",
                 "dist": {
-                    "url": "https://github.com/fluxfw/flux-markdown-to-html-converter-api/releases/download/%tag%/flux-markdown-to-html-converter-api-%tag%-build.tar.gz",
+                    "url": "https://github.com/fluxfw/flux-markdown-to-html-converter-api/archive/refs/tags/%tag%.tar.gz",
                     "type": "tar"
                 },
                 "autoload": {
